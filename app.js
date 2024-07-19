@@ -12,15 +12,15 @@ function setScore(score) {
 }
 
 function setImage() {
-  if (getScore() >= 50) {
+  const score = getScore();
+  if (score >= 50) {
+    $circle.setAttribute('src', './assets/Tramp_level3.jpg')
+  } else if (score >= 30) {
     $circle.setAttribute('src', './assets/Tramp_level2.jpg')
-}
-}
-function setImage() {
-    if (getScore() >= 150) {
-      $circle.setAttribute('src', './assets/Tramp_level3.jpg')
-    }
+  } else {
+    $circle.setAttribute('src', './assets/Tramp_level1.jpg')
   }
+}
 
 function getScore() {
   return Number(localStorage.getItem('score')) ?? 0
