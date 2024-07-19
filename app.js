@@ -1,5 +1,6 @@
 const $circle = document.querySelector('#circle')
 const $score = document.querySelector('#score')
+const $vanTrump = document.querySelector('#van-trump')
 
 function start() {
   setScore(getScore())
@@ -15,10 +16,13 @@ function setImage() {
   const score = getScore();
   if (score >= 50) {
     $circle.setAttribute('src', './assets/Tramp_level3.jpg')
+    $vanTrump.style.display = 'block'; // Показать "Ванг Трамп :)"
   } else if (score >= 30) {
     $circle.setAttribute('src', './assets/Tramp_level2.jpg')
+    $vanTrump.style.display = 'none'; // Скрыть "Ванг Трамп :)"
   } else {
     $circle.setAttribute('src', './assets/Tramp_level1.jpg')
+    $vanTrump.style.display = 'none'; // Скрыть "Ванг Трамп :)"
   }
 }
 
